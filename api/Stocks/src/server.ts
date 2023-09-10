@@ -1,0 +1,11 @@
+import ExpressConfig from "./Express/express.config"
+
+const app = ExpressConfig()
+const PORT = process.env.PORT || 5001
+
+app.listen(PORT, () => console.log("Server Running on Port: " + PORT))
+
+app.get('/', (_req, res) => {
+    console.log("Stocks OK")
+    res.send('Stocks OK')
+})
