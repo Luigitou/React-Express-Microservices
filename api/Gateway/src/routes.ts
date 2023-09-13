@@ -19,7 +19,7 @@ const ROUTES : Route[] = [
         auth: false,
         creditCheck: false,
         proxy: {
-            target: "http://localhost:5001",
+            target: "http://stocks:5001",
             changeOrigin: true,
             pathRewrite: {
                 [`^/stocks`]: '',

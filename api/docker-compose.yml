@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  stocks:
+    image: stocks
+    build:
+      context: ./Stocks
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - backend
+    container_name: stocks
+
+  gateway:
+    image: gateway
+    build:
+      context: ./Gateway
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - backend
+    depends_on:
+      - stocks
+    container_name: gateway
+
+networks:
+  backend:
+    driver: bridge

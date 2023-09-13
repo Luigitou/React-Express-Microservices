@@ -7,6 +7,8 @@ COPY package-lock.json .
 RUN mkdir node_modules
 RUN npm ci
 
+EXPOSE 5001
+
 COPY tsconfig.json .
 COPY src ./src
 CMD ["npm", "run", "dev"]
