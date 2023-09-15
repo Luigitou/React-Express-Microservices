@@ -4,6 +4,7 @@ services:
 
   stocks:
     image: stocks
+    restart: always
     build:
       context: ./Stocks
       dockerfile: Dockerfile
@@ -12,9 +13,13 @@ services:
     networks:
       - backend
     container_name: stocks
+    volumes:
+      - $PWD/Stocks:/usr/local/stocks
+      - ignore-stocks:/usr/local/stocks/node_modules
 
   gateway:
     image: gateway
+    restart: always
     build:
       context: ./Gateway
       dockerfile: Dockerfile
@@ -25,7 +30,14 @@ services:
     depends_on:
       - stocks
     container_name: gateway
+    volumes:
+      - $PWD/Gateway:/usr/local/gateway
+      - ignore-gateway:/usr/local/gateway/node_modules
 
 networks:
   backend:
     driver: bridge
+
+volumes:
+  ignore-stocks:
+  ignore-gateway:

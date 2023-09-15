@@ -1,5 +1,5 @@
 FROM node:16-bullseye
-WORKDIR /stocks
+WORKDIR /usr/local/stocks
 
 COPY package.json .
 COPY package-lock.json .

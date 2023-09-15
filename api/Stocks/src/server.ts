@@ -7,5 +7,5 @@ app.listen(PORT, () => console.log("Server Running on Port: " + PORT))
 
 app.get('/', (_req, res) => {
     console.log("Stocks OK")
-    res.send('Stocks OK')
+    res.send('Stocks OK reloaded')
 })

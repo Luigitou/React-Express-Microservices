@@ -1,5 +1,5 @@
 FROM node:16-bullseye
-WORKDIR /gateway
+WORKDIR /usr/local/gateway
 
 COPY package.json .
 COPY package-lock.json .
