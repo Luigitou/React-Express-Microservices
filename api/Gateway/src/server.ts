@@ -1,7 +1,7 @@
-import ExpressConfig from "./Express/express.config"
+import ExpressConfig from "./config/express.config"
 import morgan from "morgan";
-import ROUTES from "./routes";
-import setupProxies from "./proxy";
+import ROUTES from "./routes/routes";
+import setupProxies from "./config/proxy";
 
 const app = ExpressConfig()
 const PORT = process.env.PORT || 5000
