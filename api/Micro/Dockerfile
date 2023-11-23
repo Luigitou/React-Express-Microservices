@@ -1,5 +1,5 @@
 FROM node:16-alpine
-WORKDIR /usr/local/stocks
+WORKDIR /usr/local/micro
 
 COPY package.json .
 COPY package-lock.json .

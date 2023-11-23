@@ -1,4 +1,4 @@
-# <h1 style="text-align: center;">🚑 Projet Croix Rouge 🚑</h1>
+# <h1 style="text-align: center;">Template React & Express Microservices</h1>
 
 
 ## Table of Contents
@@ -14,9 +14,23 @@
 
 --- 
 
+This is my template for React & Express Microservices.
+
+This template is meant to be simple and easy to use. It is not meant to be a full-fledged production-ready template. It is meant to be a starting point for anyone who wants to build a React & Express Microservices.
 
 
-## <h2 id="installation">🚀 Installation</h2>
+## <h2 id="stack">💻 Tech stack</h2>
+
+---
+
+- [React](https://reactjs.org/)
+- [Express](https://expressjs.com/)
+- [Docker](https://www.docker.com/)
+- [Node](https://nodejs.org)
+- [PostgreSQL](https://www.postgresql.org/)
+
+
+## <h2 id="installation">🔧 Installation</h2>
 
 ---
 
@@ -28,32 +42,25 @@ git clone git@github.com:Initial-Dev/Project-CR.git
 
 First of all, you need to install [Docker](https://www.docker.com/) and [Node](https://nodejs.org) on your computer.
 
-### <h3 id="api">💂‍♂️ *API*</h3>
+## <h2 id="dev">👨‍💻 Development mode</h2>
 
-The API is automatically deployed using a Docker container, hense you don't need to install any dependencies.
-The only thing you need to do is to run the following command:
+---
+
+To run the app in development mode, you need to run the following command:
 
 ```bash
 docker-compose up
 ```
 
-Docker will build the containers and run them. As the src folder is mounted in the container, you can edit the code and the changes will be automatically applied.
+You can access the app on http://localhost:3000 and the API on http://localhost:5000.
+Every microservices are hidden behind the API gateway.
 
-### <h3 id="client">🏃 *Client*</h3>
+Every microservices routes are defined in the Routes files in the Gateway.
 
-#### Development mode
+## <h2>🚀 Production mode</h2>
 
-You need to install the dependencies with the following command:
+---
 
-```bash
-npm install
-```
 
-Finally, you can start the client with the following command:
 
-```bash
-npm run dev
-```
-
-Here you go, the client is now running on [http://localhost:3000](http://localhost:3000).
 

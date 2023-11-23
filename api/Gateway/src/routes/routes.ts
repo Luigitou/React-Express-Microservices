@@ -15,14 +15,14 @@ export type Route = {
 
 const ROUTES : Route[] = [
     {
-        url: '/stocks*',
+        url: '/micro*',
         auth: false,
         creditCheck: false,
         proxy: {
-            target: "http://stocks:5001",
+            target: "http://micro:5001",
             changeOrigin: true,
             pathRewrite: {
-                [`^/stocks`]: '',
+                [`^/micro`]: '',
             },
         }
     }

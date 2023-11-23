@@ -2,18 +2,18 @@ version: '3'
 
 services:
 
-    stocks:
-        image: stocks
+    micro:
+        image: micro
         restart: always
         build:
-            context: ./api/Stocks
+            context: ./api/Micro
             dockerfile: Dockerfile
         networks:
             - backend
-        container_name: stocks
+        container_name: micro
         volumes:
-            - $PWD/api/Stocks/src:/usr/local/stocks/src
-            - ignore-stocks:/usr/local/stocks/node_modules
+            - $PWD/api/Micro/src:/usr/local/micro/src
+            - ignore-micro1:/usr/local/stocks/node_modules
 
     gateway:
         image: gateway
@@ -26,7 +26,7 @@ services:
         networks:
             - backend
         depends_on:
-            - stocks
+            - micro
         container_name: gateway
         volumes:
             - $PWD/api/Gateway/src:/usr/local/gateway/src
@@ -50,6 +50,6 @@ networks:
         driver: bridge
 
 volumes:
-    ignore-stocks:
+    ignore-micro1:
     ignore-gateway:
     ignore-client:
