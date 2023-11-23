@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+
+    stocks:
+        image: stocks
+        restart: always
+        build:
+            context: ./api/Stocks
+            dockerfile: Dockerfile
+        networks:
+            - backend
+        container_name: stocks
+        volumes:
+            - $PWD/api/Stocks/src:/usr/local/stocks/src
+            - ignore-stocks:/usr/local/stocks/node_modules
+
+    gateway:
+        image: gateway
+        restart: always
+        build:
+            context: ./api/Gateway
+            dockerfile: Dockerfile
+        ports:
+            - "5000:5000"
+        networks:
+            - backend
+        depends_on:
+            - stocks
+        container_name: gateway
+        volumes:
+            - $PWD/api/Gateway/src:/usr/local/gateway/src
+            - ignore-gateway:/usr/local/gateway/node_modules
+
+    client:
+        image: client
+        restart: always
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        container_name: client
+        volumes:
+            - $PWD/client/src/:/usr/local/client/src/
+            - ignore-client:/usr/local/client/node_modules
+
+networks:
+    backend:
+        driver: bridge
+
+volumes:
+    ignore-stocks:
+    ignore-gateway:
+    ignore-client:

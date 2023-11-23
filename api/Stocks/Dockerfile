@@ -1,14 +1,12 @@
-FROM node:16-bullseye
+FROM node:16-alpine
 WORKDIR /usr/local/stocks
 
 COPY package.json .
 COPY package-lock.json .
 
-RUN mkdir node_modules
 RUN npm ci
 
 EXPOSE 5001
 
 COPY tsconfig.json .
-COPY src ./src
 CMD ["npm", "run", "dev"]

@@ -12,5 +12,5 @@ setupProxies(app, ROUTES);
 app.listen(PORT, () => console.log("Server Running on Port: " + PORT))
 
 app.get('/', (_req, res) => {
-    res.send('Gateway OK reloaded')
+    res.send('Gateway OK !')
 })

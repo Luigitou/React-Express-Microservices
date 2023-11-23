@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>PROJET CR</h1>
+      <h1></h1>
     </>
   );
 }

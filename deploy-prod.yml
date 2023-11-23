@@ -1,0 +1,19 @@
+#https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/
+apiVersion: apps/v1
+kind: Service
+metadata:
+    name: backend
+spec:
+    ports:
+        -   name: 80-tcp
+            port: 80
+            protocol: TCP
+            targetPort: 5000
+    selector:
+        com.docker.project: gateway
+    type: LoadBalancer
+status:
+    loadBalancer: {}
+
+---
+
