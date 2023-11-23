@@ -13,7 +13,6 @@ services:
         container_name: micro
         volumes:
             - $PWD/api/Micro/src:/usr/local/micro/src
-            - ignore-micro1:/usr/local/stocks/node_modules
 
     gateway:
         image: gateway
@@ -30,7 +29,6 @@ services:
         container_name: gateway
         volumes:
             - $PWD/api/Gateway/src:/usr/local/gateway/src
-            - ignore-gateway:/usr/local/gateway/node_modules
 
     client:
         image: client
@@ -43,13 +41,7 @@ services:
         container_name: client
         volumes:
             - $PWD/client/src/:/usr/local/client/src/
-            - ignore-client:/usr/local/client/node_modules
 
 networks:
     backend:
         driver: bridge
-
-volumes:
-    ignore-micro1:
-    ignore-gateway:
-    ignore-client:
